@@ -1,0 +1,103 @@
+{% extends 'admin_layout.html' %}
+{% block body %}
+<br><br> 
+<form action="/adminorder" method="POST">
+    
+    Product Code:
+    <input type="text" name="order1_date">
+    
+    <input type="submit" name="submit" value="search">
+</form>
+  <center><h3><u>Stock report</h3></center></u></center>
+   <font size="4">
+<table border="1" align="center" >
+    
+<table border="1" align="center" >
+    <thead>
+    <tr>
+        
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Present Quantity</th>
+    </tr>
+        </thead>
+    <tbody>
+            <tr>
+                <td>21E12341</td><td>
+Traditional_Glory_Silver_Pendant</td>
+<td>20</td>
+<td>10</td>
+</tr>
+<tr><td>18Z01230</td>
+<tD>Sleek_And_Shiny_Dangler_Silver_Earrings</tD>
+<td>25</td>
+<td>15</td></tr><tr><td>
+18Z01231</td><td>
+Silver_necklace_Elena</td>
+<td>30</td>
+<td>07</td>
+</tr>
+<tr><td>
+18Z01232</td><td>
+Fashion Hangings_Style_Oxidized_Silver_Bangles
+</td><td>15</td>
+<td>06</td></tr>
+<tr><td>
+19A12350</td><td>
+The_Varika_Enameled_Gold_Bangles</td>
+<td>20</td>
+<td>14</td></tr><tr><td>
+19A12351</td><td>
+Twinkle_Style_Rhodium_Polished_Gold_Bangle</td>
+<td>10</td><td>02</td></tr>
+<tr><td>
+19AB12340</td><td>
+Gold_Eye_Style_Studded_Bracelet
+</td>
+<td>19</td>
+<td>09</td></tr><tr><td>
+19B12340</td><td>
+Interloped_Golden_Circle_Slim_Chain
+</td><td>30</td>
+<td>15</td>
+</tr><tr><td>19B12341</td><td>
+Debonair_Multi_Tone_Slim_Gold_Chain
+</td>
+<td>24</td>
+<td>03</td>
+</tr><tr>
+<td>
+19B12342</td><td>
+Fashionable_Chain_With_Gold_Ball_Chain
+</td><td>34</td>
+<td>24</td></tr><tr><td>
+19C12340</td><td>
+Golden_Blooming_Beauty_Gold_Earring
+</td><td>26</td>
+<td>20</td></tr><tr><td>
+19C12341</td><td>
+Swirl_Of_Fantasy_Gold_Earring
+</td><td>20</td>
+<td>13</td></tr>
+<tr><td>
+19D12340</td><td>
+Dual_Toned_Hearts_Gold_Necklace
+</td>
+<td>27</td><td>16</td></tr><tr>
+<td>
+19D12341</td><td>
+Floral_Fantasy_Gold_Necklace
+</td><td>25</td><td>08</td>
+</tr><tr><td>
+20D12340</td><td>
+Oval_Enamour_Diamond_Necklace</td>
+                <td>20</td> 
+                <td>10</td> 
+            </tr> 
+
+    </tbody>
+
+</table></font>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+
+{% extends 'admin_layout.html' %}
+{% block body %}
+<center><h2><u>BANGLES</u></h2></center>
+<table border="1" align="center" width="100%">
+    <thead>
+    <tr>
+        <th>Bangle ID</th>
+        <th>Bangle Name</th>
+        <th>Bangle Description</th>
+        <th>Bangle Size</th>
+        <th>Bangle purity</th>
+        <th>Bangle Type</th>
+        <th>Bangle Weight</th>
+        <th>Bangle MakingPrice</th>
+        <th>Bangle Price</th>
+        <th>Edit</th>
+        <th>Delete</th></tr>
+    </thead>
+    <tbody>
+        {% for row in data %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            	<td>{{row[2]}}</td>
+            	<td>{{row[6]}}</td>
+            	<td>{{row[5]}}</td>
+            	<td>{{row[3]}}</td>
+            	<td>{{row[9]}}</td>
+            	<td>{{row[10]}}</td>
+                <td>{{row[11]}}</td>
+                <td><a href="admin_editbangles/{{row[0]}}" class="btn btn-success">Edit</a></td> <td>
+                <form action="{{url_for('admin_deletebangle', id=row[0])}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+                </td>
+                     </tr>
+        {% endfor %}
+
+        {% for row in data1 %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[9]}}</td>
+                <td>{{row[10]}}</td>
+                <td>{{row[11]}}</td>
+                <td><a href="admin_editbangles/{{row[0]}}" class="btn btn-success">Edit</a></td> <td>
+                <form action="{{url_for('admin_deletebangle', id=row[0])}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+                </td>
+                </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+body
+ {
+  margin:0;
+  padding:0;
+  background:url();
+  background-size:cover;
+  background-repeat: no-repeat;
+  font-family: Times New Roman;
+  font-size:17px;
+  width:100%;
+}
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding: 15px;
+    }
+#header h1 a:hover
+ {
+color: #273be2;
+text-decoration: none;
+}
+
+#top
+{
+padding:10px 0;
+text-align:center;
+color:#00ffff;
+font-size:25px;
+height:40px;
+}  
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+   <img src="{{ url_for('static', filename='images/logo.jpeg') }}" align="left"  height="70" width="200"> 
+   <div class="navbar-brand"><font color="White"><center>LULU JEWELLERY SHOPPING</center></font>
+   </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="admin_register"><span class="glyphicon glyphicon-log-in"></span>Admin_register</a></li>
+        <li><a href="admin_logout"><span class="glyphicon glyphicon-log-out"></span>Admin_logout</a></li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      
+      <li><a href="admin_addproducts">Add Products</a></li>
+       
+       
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">View Products</a>
+        <ul class="dropdown-menu">
+          <li><a href="admin_viewbangles">View Bangles</a></li>
+          <li><a href="admin_viewchains">View Chains</a></li>
+          <li><a href="admin_viewearrings">View Earrings</a></li>
+          <li><a href="admin_viewnecklaces">View Necklaces</a></li>
+          <li><a href="admin_viewpendants">View Pendants</a></li>
+          <li><a href="admin_viewrings">View Rings</a></li>
+          <li><a href="admin_viewnosepins">View Nosepins</a></li>
+          <li><a href="admin_viewelena">View Elenas</a></li>
+          <li><a href="admin_viewgina">View Gina</a></li>
+        </ul>
+      </li>
+      <li><a href="admin_ordersummary">Orders</a></li>
+       <li><a href="admin_addoffer">Add Offers</a></li>
+       <li><a href="admin_viewoffer">View Offers</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">View Reports</a>
+        <ul class="dropdown-menu">
+          <li><a href="admin_ordersummary">Order Report</a></li>
+          <li><a href="admin_offer">Offer Report</a></li>
+          <li><a href="admin_stock">Stock Report</a></li>
+          <li><a href="admin_feedback">Feedback</a></li>
+       </ul>
+  </div>
+</nav>
+
+<div class="container">
+     {% include 'includes/_messages.html' %}
+     {% block body %}
+     {% endblock %}
+   </div>
+ </body>
+</html>

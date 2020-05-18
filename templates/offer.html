@@ -1,0 +1,79 @@
+{% extends 'admin_layout.html' %}
+{% block body %}
+<br><br> 
+<form action="/adminorder" method="POST">
+    Offer:
+    <select name="product_ornament" required>
+    <option name="Earrings">15%</option>
+    </select>
+    From:
+    <input type="date" name="order_date">
+    To:
+    <input type="date" name="order1_date">
+    
+    <input type="submit" name="submit" value="search">
+</form>
+  <center><h3><u>Offer Report</h3></center></u></center>
+   <font size="4">
+<table border="1" align="center" >
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Discount price</th>
+        <th>Total Price</th>
+        <th>Date</th>
+        
+    </tr>
+        </thead>
+    <tbody>
+      
+      <tr><td>Kavitha</td> <td>
+      19A12350</td><td>
+The_Varika_Enameled_Gold_Bangles</td>
+<td>115000.00</td>
+<td>17250.00</td>
+<td>97750.00</td>
+<td>2019-09-02</td>
+</tr>
+
+<tr><td>Seetha</td> 
+<td>
+19D12340</td><td>
+Dual_Toned_Hearts_Gold_Necklace
+</td>
+<td>135000.00</td>
+<td>20250.00</td>
+<td>114750.00</td>
+<td>2019-09-08</td>
+</tr>
+
+
+<tr><td>Vinitha</td> 
+<td>
+20D12340</td><td>
+Oval_Enamour_Diamond_Necklace</td>
+           
+<td>250000.00</td>
+<td>37500.00</td>
+<td>212500.00</td>
+<td>2019-09-14</td>
+</tr>
+
+
+<tr><td>yoga</td> 
+<td>
+19C12341</td><td>
+Swirl_Of_Fantasy_Gold_Earring
+</td>
+<td>150000.00</td>
+<td>18000.00</td>
+<td>102000.00</td>
+<td>2019-09-18</td>
+</tr>
+    </tbody>
+
+</table>
+{% endblock %}

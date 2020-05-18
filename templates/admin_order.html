@@ -1,0 +1,40 @@
+{% extends 'admin_layout.html' %}
+{% block body %}
+<br><br> 
+<form action="/adminorder" method="POST">
+    <input type="date" name="order_date">
+    <input type="submit" name="submit" value="button">
+</form>
+  <center><h3><u>ORDER SUMMARY</h3></center></u></center>
+   <font size="3">
+<table border="1" align="center" >
+    <thead>
+    <tr>
+        <th>Product Code</th>
+        <th>Product Name</th>
+        <th>Product Type</th>
+        <th>Product Purity</th>
+        <th>Product Weight</th>
+        <th>Product Price</th>
+        <th>Ordered date</th>
+        <th>Customer Name</th>
+    </tr>
+        </thead>
+    <tbody>
+        {% for row in data %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[9]}}gms</td>
+                <td>₹{{row[11]}}</td>
+                <td>{{row[13]}}</td>
+                <td>{{row[14]}}</td>               
+</tr> 
+        {% endfor %}
+        
+    </tbody>
+
+</table>
+{% endblock %}

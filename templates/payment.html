@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+body
+ {
+  margin:0;
+  padding:0;
+  background:url();
+  background-size:cover;
+  background-repeat: no-repeat;
+  font-family: Arial;
+  font-size:14px;
+}
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding: 10px;
+    }
+#header h1 a:hover
+ {
+color: #273be2;
+text-decoration: none;
+}
+.fixed
+{
+  position: fixed;
+  width: 100%;
+}
+#top
+{
+padding:10px 0;
+text-align:center;
+color:#00ffff;
+font-size:25px;
+height:20px;
+}  
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width:30%;
+  padding:08px;
+  font-size: 20px;
+  background: #2196F3;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+</style>
+</head>
+<body>
+<div class="fixed">
+<nav class="navbar navbar-inverse">
+  <img src="{{ url_for('static', filename='images/logo.jpeg') }}" align="left"  height="70" width="200"> 
+   <div class="navbar-brand"><font color="White"><center>LULU JEWELLERY SHOPPING</center></font>
+   </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+         <button style="font-size:24px" ><a href="/customer_cart"><i class="fa fa-shopping-cart"></i></a></button>
+            <li><a href="register"><span class="glyphicon glyphicon-log-in"></span>Signup</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">GOLD</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewgoldbangles">Bangles</a></li>
+          <li><a href="customer_viewgoldchains">Chains</a></li>
+          <li><a href="customer_viewgoldearrings">Earrings</a></li>
+          <li><a href="customer_viewgoldnecklace">Necklaces</a></li>
+          <li><a href="customer_viewgoldpendants">Pendants</a></li>
+          <li><a href="customer_viewgoldrings">Rings</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SILVER
+       </a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewsilverbangles">Bangles</a></li>
+          <li><a href="customer_viewsilverchains">Chains</a></li>
+          <li><a href="customer_viewsilverearrings">Earrings</a></li>
+          <li><a href="customer_viewsilvernecklace">Necklaces</a></li>
+          <li><a href="customer_viewsilverpendants">Pendants</a></li>
+          <li><a href="customer_viewsilverrings">Rings</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">DIAMOND</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewdiamondbangles">Bangles</a></li>
+          <li><a href="customer_viewdiamondnosepins">Nosepins</a></li>
+          <li><a href="customer_viewdiamondearrings">Earrings</a></li>
+          <li><a href="customer_viewdiamondnecklace">Necklaces</a></li>
+          <li><a href="customer_viewdiamondpendants">Pendants</a></li>
+          <li><a href="customer_viewdiamondrings">Rings</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">COLLECTIONS</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewelena">Elena</a></li>
+          <li><a href="customer_viewgina">Gina</a></li>
+          </ul>
+      </li>
+       <li><form class="example" action="" method="post" autocomplete="off" >
+        <input type="text" placeholder="Search.." name="search">
+          <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+           </form>
+          </li>
+    </ul>
+  </div>
+</nav><font color="black"><h5>Welcome {{session.mailid}}</h5></font>
+</div>
+<div class="container">
+     {% include 'includes/_messages.html' %}
+     {% block body %}
+     {% endblock %}
+   </div>
+
+<br><br><br><br><br><br><br><br><br>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/payment" method="POST">
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <center><h3>Total Price = 
+                 ₹{{ data[0] }}
+        </center>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="card_name" name="card_name" placeholder="John More Doe" >
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="card_number" name="card_number" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="card_expmonth" name="card_expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="card_expyear" name="card_expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="card_cvv" name="card_cvv" placeholder="352">
+              </div>
+            </div>
+         
+        </div>
+        <center><input type="submit" value="PAY" class="button"></center>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

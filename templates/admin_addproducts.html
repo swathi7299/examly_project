@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+body
+ {
+  margin:0;
+  padding:0;
+  background:url();
+  background-size:cover;
+  background-repeat: no-repeat;
+  font-family: Times New Roman;
+  font-size:17px;
+  width:100%;
+}
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding: 15px;
+    }
+#header h1 a:hover
+ {
+color: #273be2;
+text-decoration: none;
+}
+
+#top
+{
+padding:10px 0;
+text-align:center;
+color:#00ffff;
+font-size:25px;
+height:40px;
+}  
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+   <img src="{{ url_for('static', filename='images/logo.jpeg') }}" align="left"  height="70" width="200"> 
+   <div class="navbar-brand"><font color="White"><center>LULU JEWELLERY SHOPPING</center></font>
+   </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="admin_register"><span class="glyphicon glyphicon-log-in"></span>Admin_register</a></li><li><a href="admin_logout"><span class="glyphicon glyphicon-log-out"></span>Admin_logout</a></li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      
+      <li><a href="admin_addproducts">Add Products</a></li>
+       
+       
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">View Products</a>
+        <ul class="dropdown-menu">
+          <li><a href="admin_viewbangles">View Bangles</a></li>
+          <li><a href="admin_viewchains">View Chains</a></li>
+          <li><a href="admin_viewearrings">View Earrings</a></li>
+          <li><a href="admin_viewnecklaces">View Necklaces</a></li>
+          <li><a href="admin_viewpendants">View Pendants</a></li>
+          <li><a href="admin_viewrings">View Rings</a></li>
+          <li><a href="admin_viewnosepins">View Nosepins</a></li>
+          <li><a href="admin_viewelena">View Elenas</a></li>
+          <li><a href="admin_viewgina">View Gina</a></li>
+        </ul>
+      </li>
+      <li><a href="admin_ordersummary">Orders</a></li>
+       <li><a href="admin_addoffer">Add Offers</a></li>
+       <li><a href="admin_viewoffer">View Offers</a></li>
+       </ul>
+
+  </div>
+</nav>
+
+
+<div class="container">
+     {% include 'includes/_messages.html' %}
+     {% block body %}
+     {% endblock %}
+   </div>
+   <div class="row"><div class="column">
+ <center>
+   <form action="admin_addproducts" method="post" autocomplete="off" enctype=multipart/form-data>
+    <center><h4>ADDING PRODUCTS</h4></center><br>
+    <table>
+    <tr><td>
+   Product Id:</td>
+    <td><input type="text" name="product_id" pattern="^([1-9]{2})([A-Za-z]{1,3})([1-9]{4,6})" style="text-transform: uppercase" title="Please enter id in alphanumeric characters no special characters as per in the box" placeholder="Eg.19A12340" required></td></td></tr>   </tr>
+    <tr><td>
+   Product Name:</td>
+    <td><input type="text" name="product_name" pattern="[A-Za-z ]+" title="Please enter name in alphabets" required></td></tr>
+   <tr><td>
+    
+   Product Description:</td><td>
+    <input type="text" name="product_description" patten="[A-Za-z0-9]+" required></td></tr>
+    <tr><td>
+   Product category:</td><td>
+    <select name="product_category" required>
+    <option name="Gold">Gold</option>
+    <option name="Silver">Silver</option>
+    <option name="Diamond">Diamond</option>
+    </select>
+    <tr><td>
+   Ornament Type:</td><td>
+    <select name="product_ornament" required>
+    <option name="Earrings">Earrings</option>
+    <option name="Rings">Rings</option>
+    <option name="Chains">Chains</option>
+    <option name="Bangles">Bangles</option>
+    <option name="Bracelets">Bracelets</option>
+    <option name="Pendants">Pendants</option>
+    <option name="Necklace">Necklace</option>
+    <option name="Gina">Gina</option>
+    <option name="Elena">Elena</option>
+    <option name="Nosepins">Nosepins</option>
+    </select>
+    <tr><td>
+   Product Size:</td><td>
+    <input type="text" name="product_size" pattern="^[0-9]{1,2}" title="Please enter the size in 1-2 positive digits" required></td></tr>
+    <tr><td>
+     Product Purity:</td><td>
+    <select name="product_purity" required>
+    <option name="18.00">18kt</option>
+    <option name="21.00">21kt</option>
+    <option name="22.00">22kt</option>
+    <option name="24.00">24kt</option>
+    <option name="80.50">80.50purity(silver)</option>
+    <option name="92.50">92.50purity(silver)</option>
+    <option name="99.50">99.50purity(silver)</option>
+    </select>
+    </td></tr>
+    <tr><td>
+   Product Quantity:</td><td>   
+    <input type="text" name="product_quantity" pattern="^[0-9]{1,3}" title="Please enter the size in 1-2 positive digits" required></td></tr>
+    <tr><td>
+    Product Quantityinstock:</td><td>
+    <input type="text" name="product_quantityinstock" pattern="^[0-9]{1,3}" title="Please enter the size in 1-2 positive digits" required></td></tr>
+    <tr><td>
+    Product Weight:</td><td>
+    <input type="text" name="product_weight" pattern="^\d+(\.\d{2})$" title="Please enter positive value and 2 decimal precision" required></td></tr>
+    <tr><td>
+    Product Makingprice:</td><td>
+    <input type="text" name="product_makingprice" pattern="^\d+(\.\d{2})$" title="Please enter positive value and 2 decimal precision"  required></td></tr>
+    <tr><td>
+    Product Price:</td><td>
+    <input type="text" name="product_price" pattern="^\d+(\.\d{2})$" title="Please enter positive value and 2 decimal precision" required></td></tr>
+    <tr><td>
+    Product image:</td><td>
+    <input type="file" name="product_image" required></td></tr>
+    </table>
+    <br>
+    <button type="submit" class="btn btn-default" name="submit">Submit</button>
+    </form>
+</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+{% extends 'admin_layout.html' %}
+{% block body %}
+<center><h2><u>PROMOTION STRATEGIES</u></h2></center>
+ 
+<a href="admin_addoffer"><strong><h3><font color="black">Add Offers</font></h3></strong> </a>
+
+<strong><h3>RULE 1: Giving Discount to Regular Customers(personalised discount)</h3></strong><br>
+<table border="1" align="center">
+    <thead>
+    <tr>
+        <th>Offer MinValue</th>
+        <th>Offer Maxvalue</th>
+        <th>Discount</th>
+        <th>Edit</th>
+        <th>Delete</th></tr>
+           </thead>
+    <tbody>
+        {% for row in data %} 
+            <tr>
+                <td style="display:none;">{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            	<td>{{row[2]}}</td>
+            	<td>{{row[3]}}</td> 
+                <td><a href="admin_editoffer/{{row[0]}}" class="btn btn-success">Edit</a></td> 
+
+                </td> 
+            	<td><form action="{{url_for('admin_deleteoffer', id=row[0])}}" method="post">
+                <input type="hidden" name="method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form></td>
+                </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<strong><h3>RULE 2: Free silver coin for every purchase for every customers</h3></strong><br>
+
+{% endblock %}

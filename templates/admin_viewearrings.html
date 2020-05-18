@@ -1,0 +1,39 @@
+
+{% extends 'admin_layout.html' %}
+{% block body %}
+<center><h2><u>EARRINGS</u></h2></center>
+<table border="1" align="center">
+    <thead>
+    <tr>
+        <th>Earring ID</th>
+        <th>Earring Name</th>
+        <th>Earring Description</th>
+        <th>Earring purity</th>
+        <th>Earring Type</th>
+        <th>Earring Weight</th>
+        <th>Earring MakingPrice</th>
+        <th>Earring Price</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        {% for row in data %} 
+            <tr>
+                <td>{{row[0]}}</td>
+            	<td>{{row[1]}}</td>
+            	<td>{{row[2]}}</td>
+            	<td>{{row[5]}}</td>
+            	<td>{{row[3]}}</td>
+            	<td>{{row[9]}}</td>
+            	<td>{{row[10]}}</td>
+                <td>{{row[11]}}</td>
+                <td><a href="admin_editearrings/{{row[0]}}" class="btn btn-success">Edit</a></td> 
+                <td><form action="{{url_for('admin_deleteearring', id=row[0])}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

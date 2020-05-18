@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+body
+ {
+  margin:0;
+  padding:0;
+  background:url();
+  background-size:cover;
+  background-repeat: no-repeat;
+  font-family: Arial;
+  font-size:14px;
+}
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding: 10px;
+    }
+#header h1 a:hover
+ {
+color: #273be2;
+text-decoration: none;
+}
+#top
+{
+padding:10px 0;
+text-align:center;
+color:#00ffff;
+font-size:25px;
+height:20px;
+}  
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+form.example button {
+  float: left;
+  width:30%;
+  padding:08px;
+  font-size: 20px;
+  background: #2196F3;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 45%;
+  padding: 40px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.fixed
+{
+  position: fixed;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+<div class="fixed">
+<nav class="navbar navbar-inverse">
+<img src="{{ url_for('static', filename='images/logo.jpeg') }}" align="left"  height="70" width="200"> 
+   <div class="navbar-brand"><font color="White"><center>LULU JEWELLERY SHOPPING</center></font>
+   </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+         <button style="font-size:24px" ><a href="/customer_cart"><i class="fa fa-shopping-cart"></i></a></button>
+            <li><a href="register"><span class="glyphicon glyphicon-log-in"></span>Signup</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+         <li><a href="ordersummary">My Orders</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">GOLD</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewgoldbangles">Bangles</a></li>
+          <li><a href="customer_viewgoldchains">Chains</a></li>
+          <li><a href="customer_viewgoldearrings">Earrings</a></li>
+          <li><a href="customer_viewgoldnecklace">Necklaces</a></li>
+          <li><a href="customer_viewgoldpendants">Pendants</a></li>
+          <li><a href="customer_viewgoldrings">Rings</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SILVER
+       </a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewsilverbangles">Bangles</a></li>
+          <li><a href="customer_viewsilverchains">Chains</a></li>
+          <li><a href="customer_viewsilverearrings">Earrings</a></li>
+          <li><a href="customer_viewsilvernecklace">Necklaces</a></li>
+          <li><a href="customer_viewsilverpendants">Pendants</a></li>
+          <li><a href="customer_viewsilverrings">Rings</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">DIAMOND</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewdiamondbangles">Bangles</a></li>
+          <li><a href="customer_viewdiamondnosepins">Nosepins</a></li>
+          <li><a href="customer_viewdiamondearrings">Earrings</a></li>
+          <li><a href="customer_viewdiamondnecklace">Necklaces</a></li>
+          <li><a href="customer_viewdiamondpendants">Pendants</a></li>
+          <li><a href="customer_viewdiamondrings">Rings</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">COLLECTIONS</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewelena">Elena</a></li>
+          <li><a href="customer_viewgina">Gina</a></li>
+          
+        </ul>
+      </li>
+       <li><form class="example" action="/search" method="post" autocomplete="off" >
+        <input type="text" name="search" placeholder="Search ur items...">
+          <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+           </form>
+          </li>
+    </ul>
+  </div>
+</nav><font color="black"><h5>Welcome {{session.mailid}}</h5></font>
+</div>
+<div class="container">
+     {% include 'includes/_messages.html' %}
+     {% block body %}
+     {% endblock %}
+   </div>
+
+<br><br><br><br><br><br><br><br>
+<div class="row">
+  <div class="column">
+   <br><br><br><br>
+     <img src="static/images/ring3.jfif" height="350" width="400">
+    <br><br><br><br>
+     <img src="static/images/sring.jfif" height="350" width="400">
+  
+    <br><br><br><br><br><br>
+  
+  </div>
+  <div class="column">
+    {% for row in data %}
+     <p><h1>
+                  {{row[1]}}</h1></p>
+            <p>Product Code:
+                  {{row[0]}}</p>
+            <p>Product Description:
+                  {{row[2]}}</p>
+            <p>Product Size:
+                  {{row[6]}}<a href="/ring"> <u>Ring Size</u></a> <i>* All Sizes available *</i></p></p>
+            <p>Product Purity:
+                  {{row[7]}} </p>
+            <p>Product Weight:
+                  {{row[9]}}gms</p>
+            <p>Product Making Price:
+                  ₹{{row[10]}}</p>
+            <p>Product total price:
+                  ₹{{row[11]}}</p>
+         
+            <br><br>
+             <form action="/add_to_cart" method="POST">
+          <input type="text" name="product_id" value={{row[0]}} style="display:none;">
+           <input type="submit" class="button" value="BUY NOW"></a> 
+         <br><br><br>   
+        </form>
+        {% endfor %}
+  </div>
+</div>
+
+    

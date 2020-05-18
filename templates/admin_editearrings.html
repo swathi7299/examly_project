@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+body
+ {
+  margin:0;
+  padding:0;
+  background:url();
+  background-size:cover;
+  background-repeat: no-repeat;
+  font-family: Times New Roman;
+  font-size:17px;
+  width:100%;
+}
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding: 15px;
+    }
+#header h1 a:hover
+ {
+color: #273be2;
+text-decoration: none;
+}
+
+#top
+{
+padding:10px 0;
+text-align:center;
+color:#00ffff;
+font-size:25px;
+height:40px;
+}  
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+   <img src="{{ url_for('static', filename='images/logo.jpeg') }}" align="left"  height="70" width="200"> 
+   <div class="navbar-brand"><font color="White"><center>LULU JEWELLERY SHOPPING</center></font>
+   </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="admin_register"><span class="glyphicon glyphicon-log-in"></span>Admin_register</a></li>
+            <li><a href="admin_login"><span class="glyphicon glyphicon-log-in"></span>Admin_login</a></li>
+         <li><a href="admin_logout"><span class="glyphicon glyphicon-log-out"></span>Admin_logout</a></li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      
+      <li><a href="admin_addproducts">Add Products</a></li>
+       
+       
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">View Products</a>
+        <ul class="dropdown-menu">
+          <li><a href="admin_viewbangles">View Bangles</a></li>
+          <li><a href="admin_viewchains">View Chains</a></li>
+          <li><a href="admin_viewearrings">View Earrings</a></li>
+          <li><a href="admin_viewnecklaces">View Necklaces</a></li>
+          <li><a href="admin_viewpendants">View Pendants</a></li>
+          <li><a href="admin_viewrings">View Rings</a></li>
+          <li><a href="admin_viewnosepins">View Nosepins</a></li>
+          <li><a href="admin_viewelena">View Elenas</a></li>
+          <li><a href="admin_viewgina">View Gina</a></li>
+        </ul>
+      </li>
+      <li><a href="admin_ordersummary">Orders</a></li>
+       <li><a href="admin_addoffer">Add Offers</a></li>
+       <li><a href="admin_viewoffer">View Offers</a></li>
+       </ul>
+
+  </div>
+</nav>
+
+
+<div class="container">
+     {% include 'includes/_messages.html' %}
+     {% block body %}
+     {% endblock %}
+   </div>
+   <div class="row"><div class="column">
+ <center>
+   <form action="admin_editearrings" method="post" autocomplete="off" enctype=multipart/form-data>
+    <center><h4>ADDING PRODUCTS</h4></center><br>
+    <table>
+    <tr><td>
+   Product Name:</td>
+    <td><input type="text" name="product_name" pattern="[A-Za-z _]+" title="Please enter name in alphabets" value={{data[1]}} required></td></tr>
+   <tr><td>
+
+   Product category:</td><td>
+    <select name="product_category" value={{data[3]}}required>
+    <option name="Gold">Gold</option>
+    <option name="Silver">Silver</option>
+    <option name="Diamond">Diamond</option>
+    </select>
+    <tr><td>
+   Ornament Type:</td><td>
+    <select name="product_ornament" value={{data[4]}} required>
+    <option name="Earrings">Earrings</option>
+    <option name="Rings">Rings</option>
+    <option name="Chains">Chains</option>
+    <option name="Bangles">Bangles</option>
+    <option name="Bracelets">Bracelets</option>
+    <option name="Pendants">Pendants</option>
+    <option name="Necklace">Necklace</option>
+    <option name="Gina">Gina</option>
+    <option name="Elena">Elena</option>
+    <option name="Nosepins">Nosepins</option>
+    </select>
+    <tr><td>
+   Product Size:</td><td>
+    <input type="text" name="product_size" pattern="^[0-9]{1,2}" title="Please enter the size in 1-2 positive digits" value={{data[6]}} required></td></tr>
+    <tr><td>
+     Product Purity:</td><td>
+    <select name="product_purity" value={{ data[6] }} required>
+    <option name="18.00">18kt</option>
+    <option name="21.00">21kt</option>
+    <option name="22.00">22kt</option>
+    <option name="24.00">24kt</option>
+    <option name="80.50">80.50purity(silver)</option>
+    <option name="92.50">92.50purity(silver)</option>
+    <option name="99.50">99.50purity(silver)</option>
+    </select>
+    </td></tr>
+    <tr><td>
+   Product Quantity:</td><td>   
+    <input type="text" name="product_quantity" value={{data[7]}}  pattern="^[0-9]{1,3}" title="Please enter the size in 1-2 positive digits" required></td></tr>
+    <tr><td>
+    Product Quantityinstock:</td><td>
+    <input type="text" name="product_quantityinstock" value={{data[8]}} pattern="^[0-9]{1,3}" title="Please enter the size in 1-2 positive digits" required></td></tr>
+    <tr><td>
+    Product Weight:</td><td>
+    <input type="text" name="product_weight" value={{data[9]}}  pattern="^\d+(\.\d{2})$" title="Please enter positive value and 2 decimal precision" required></td></tr>
+    <tr><td>
+    Product Makingprice:</td><td>
+    <input type="text" name="product_makingprice" value={{data[10]}} pattern="^\d+(\.\d{2})$" title="Please enter positive value and 2 decimal precision"  required></td></tr>
+    <tr><td>
+    Product Price:</td><td>
+    <input type="text" name="product_price" pattern="^\d+(\.\d{2})$" value={{data[11]}} title="Please enter positive value and 2 decimal precision" required></td></tr>
+    </table>
+    <br>
+    <button type="submit" class="btn btn-default" name="submit">Submit</button>
+    </form>
+</center>
+</div>
+<div class="column">
+    GOLD<br>
+19A - Bangles<br>
+19B - Chains<br>
+19C - Earrings<br>
+19D - Necklaces<br>
+19E - Pendants<br>
+19F - Rings<br>
+19AB - Bracelets<br>
+DIAMOND<br>
+20A - Bangles<br>
+20G - Nosepins<br>
+20C - Earrings<br>
+20D - Necklaces<br>
+20E - Pendants<br>
+20F - Rings<br>
+20AB - Bracelets<br>
+SILVER<br>
+21A - Bangles<br>
+21B - Chains<br>
+21C - Earrings<br>
+21D - Necklaces<br>
+21E - Pendants<br>
+21F - Rings<br>
+GINA<br>
+19Z<br>
+ELENA<br>
+18Z<br>
+</div>
+</div>
+</body>
+</html>

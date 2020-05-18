@@ -1,0 +1,41 @@
+
+{% extends 'admin_layout.html' %}
+{% block body %}
+<center><h2><u>RINGS</u></h2></center>
+<table border="1" align="center">
+    <thead>
+    <tr>
+        <th>Ring ID</th>
+        <th>Ring Name</th>
+        <th>Ring Description</th>
+        <th>Ring Size</th>
+        <th>Ring purity</th>
+        <th>Ring Type</th>
+        <th>Ring Weight</th>
+        <th>Ring MakingPrice</th>
+        <th>Ring Price</th>
+        <th>Edit</th>
+        <th>Delete</th></tr>
+    </thead>
+    <tbody>
+        {% for row in data %} 
+            <tr>
+                 <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[9]}}gms</td>
+                <td>{{row[10]}}</td>
+                <td>{{row[11]}}</td>
+                <td><a href="admin_editrings/{{row[0]}}" class="btn btn-success">Edit</a></td> 
+            <td><form action="{{url_for('admin_deletering', id=row[0])}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

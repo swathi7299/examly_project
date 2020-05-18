@@ -1,0 +1,42 @@
+{% extends 'admin_layout.html' %}
+{% block body %}
+<center><h2><u>NECKLACES</u></h2></center>
+<table border="1" align="center">
+    <thead>
+    <tr>
+        <th>Necklace ID</th>
+        <th>Necklace Name</th>
+         
+        <th>Necklace Description</th>
+       
+          <th>Necklace purity</th>
+        <th>Necklace Type</th>
+        <th>Necklace Weight</th>
+        <th>Necklace MakingPrice</th>
+        <th>Necklace Price</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in data %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            	 
+            	<td>{{row[2]}}</td>
+            	<td>{{row[5]}}</td>
+            	 <td>{{row[3]}}</td>
+            	<td>{{row[9]}}</td>
+            	<td>{{row[10]}}</td>
+            	<td>{{row[11]}}</td>
+                <td><a href="admin_editnecklaces/{{row[0]}}" class="btn btn-success">Edit</a></td> 
+                <td><form action="{{url_for('admin_deletenecklace', id=row[0])}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+                </form></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

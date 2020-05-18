@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+
+body
+ {
+  margin:0;
+  padding:0;
+  background:url();
+  background-size:cover;
+  background-repeat: no-repeat;
+  font-family: Arial;
+  font-size:14px;
+  width:100%;
+}
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding: 10px;
+       }
+#header h1 a:hover
+ {
+color: #273be2;
+text-decoration: none;
+}
+#top
+{
+padding:10px 0;
+text-align:center;
+color:#00ffff;
+font-size:25px;
+height:20px;
+}   
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+   <img src="{{ url_for('static', filename='images/logo.jpeg') }}" align="left"  height="70" width="200"> 
+   <div class="navbar-brand"><font color="White"><center>LULU JEWELLERY SHOPPING</center></font>
+   </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="admin_register"><span class="glyphicon glyphicon-log-in"></span>Admin_register</a></li>
+            <li><a href="admin_login"><span class="glyphicon glyphicon-log-in"></span>Admin_login</a></li>
+          
+      </ul>
+    </div>
+  </div>
+</nav><br><br><br><br><center>
+<div class="round">
+  <img class="mySlides" src="{{ url_for('static', filename='images/image1.jpg') }}" height="450" width="750">
+  <img class="mySlides" src="{{ url_for('static', filename='images/image2.jpg') }}"  height="450" width="750">
+  <img class="mySlides" src="{{ url_for('static', filename='images/image3.jpg') }}"  height="450" width="750">
+  <img class="mySlides" src="{{ url_for('static', filename='images/image4.png') }}"  height="450" width="750">
+  <img class="mySlides" src="{{ url_for('static', filename='images/image5.png') }}"  height="450" width="750">
+  <img class="mySlides" src="{{ url_for('static', filename='images/image6.png') }}"  height="450" width="750">
+</div></center>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+ </body>
+</html>
+

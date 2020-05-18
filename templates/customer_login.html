@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+body
+ {
+  margin:0;
+  padding:0;
+  background:url();
+  background-size:cover;
+  background-repeat: no-repeat;
+  font-family: Arial;
+  font-size:14px;
+}
+ .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      padding: 10px;
+       }
+#header h1 a:hover
+ {
+color: #273be2;
+text-decoration: none;
+}
+#top
+{
+padding:10px 0;
+text-align:center;
+color:#00ffff;
+font-size:25px;
+height:20px;
+}  
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+form.example button {
+  float: left;
+  width:30%;
+  padding:08px;
+  font-size: 20px;
+  background: #2196F3;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+ .container
+    {
+     
+    color:#666;
+    padding:20px;
+    border-radius:10px;
+    position: absolute;  
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: 400px;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+ <img src="{{ url_for('static', filename='images/logo.jpeg') }}" align="left"  height="70" width="200"> 
+   <div class="navbar-brand"><font color="White"><center>LULU JEWELLERY SHOPPING</center></font>
+   </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="register"><span class="glyphicon glyphicon-log-in"></span>Signup</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">GOLD</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewgoldbangles">Bangles</a></li>
+          <li><a href="customer_viewgoldchains">Chains</a></li>
+          <li><a href="customer_viewgoldearrings">Earrings</a></li>
+          <li><a href="customer_viewgoldnecklaces">Necklaces</a></li>
+          <li><a href="customer_viewgoldpendants">Pendants</a></li>
+          <li><a href="customer_viewgoldrings">Rings</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SILVER
+       </a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewsilverbangles">Bangles</a></li>
+          <li><a href="customer_viewsilverchains">Chains</a></li>
+          <li><a href="customer_viewsilverearrings">Earrings</a></li>
+          <li><a href="customer_viewsilvernecklace">Necklaces</a></li>
+          <li><a href="customer_viewsilverpendants">Pendants</a></li>
+          <li><a href="customer_viewsilverrings">Rings</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">DIAMOND</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewdiamondbangles">Bangles</a></li>
+          <li><a href="customer_viewdiamondnosepins">Nosepins</a></li>
+          <li><a href="customer_viewdiamondearrings">Earrings</a></li>
+          <li><a href="customer_viewdiamondnecklace">Necklaces</a></li>
+          <li><a href="customer_viewdiamondpendants">Pendants</a></li>
+          <li><a href="customer_viewdiamondrings">Rings</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">COLLECTIONS</a>
+        <ul class="dropdown-menu">
+          <li><a href="customer_viewelena">Elena</a></li>
+          <li><a href="customer_viewgina">Gina</a></li>
+          
+        </ul>
+      </li>
+       <li><form class="example" action="/search" method="post" autocomplete="off" >
+        <input type="text" placeholder="Search.." name="search">
+          <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+           </form>
+          </li>
+    </ul>
+  </div>
+</nav><br><br><br>
+<div class="container">
+     {% include 'includes/_messages.html' %}
+     {% block body %}
+     {% endblock %}
+     
+      <div class="row">
+      <form action="/login" method="post" autocomplete="off">
+       <div class="form-group">
+          <h1><center>Login</center></h1> 
+          {% if error %}
+            <p>{{ error }}</p>
+          {% endif %}
+          <p><span class="glyphicon glyphicon-user"></span> Email:</p>
+          <input type="email" class="form-control" id="mailid" name="mailid" placeholder="Email Address" style="text-transform: lowercase" required> 
+       </div>
+       <div class="form-group">
+          <p><span class="glyphicon glyphicon-lock"></span> Password:</p>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+       </div>
+       <p><a href="register"><b>Create Account</b></a></p>   
+       <center><button type="submit" class="btn btn-default" name="submit"><u><b>Submit</u></b></button><center>
+     </form>
+    </div>
+    </div>
+
+<div class="col-sm-3 text-left">
+</div>
+<div class="container-fluid text-center">    
+ <div class="col-sm-6 text-center">
+<br>
+</div>
+</div>
+ <div class="col-sm-3 text-left">
+</div>
+ </body>
+</html>

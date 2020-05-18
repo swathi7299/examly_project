@@ -1,0 +1,38 @@
+
+{% extends 'customer_layout.html' %}
+{% block body %}<br>
+<center><form method="POST" action="/filter">
+  <select name="product_category">
+    <option name="Gold">Gold</option>
+    <option name="Silver">Silver</option>
+    <option name="Diamond">Diamond</option>
+    <option name="Platinum">Platinum</option>
+    </select>
+
+  <select name="product_ornament">
+    <option name="Earrings">Earrings</option>
+    <option name="Rings">Rings</option>
+    <option name="Chains">Chains</option>
+    <option name="Bangles">Bangles</option>
+    <option name="Bracelets">Bracelets</option>
+    <option name="Pendants">Pendants</option>
+    <option name="Necklace">Necklace</option>
+    <option name="Gina">Gina</option>
+    <option name="Elena">Elena</option>
+    <option name="Nosepins">Nosepins</option>
+    </select>
+     
+  <select name="range">
+    <option name="0-5000">0-5000</option>
+    <option name="5000-10000">5000-10000</option>
+    <option name="10000-25000">10000-25000</option>
+    <option name="25000-50000">25000-50000</option>
+    <option name="50000-100000">50000-100000</option>
+    <option name="100000-150000">100000-150000</option>
+    <option name="150000-300000">150000-300000</option>
+ </select>
+
+  <button type="submit">Submit</button>
+</form>
+</center>
+{% endblock %}
