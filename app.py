@@ -32,7 +32,7 @@ def admin_stock1():
 def admin_1():
     return render_template('offer.html')
 
-  @app.route('/admin_offer1')
+@app.route('/admin_offer1')
 def admin_11():
     return render_template('feedback1.html')
 
