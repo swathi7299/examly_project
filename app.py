@@ -4,7 +4,6 @@ import mysql.connector
 from mysql.connector import Error
 from functools import wraps
 from Werkzeug import secure_filename
-import json
 import datetime
 
 app = Flask(__name__)
