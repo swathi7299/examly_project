@@ -3,7 +3,7 @@ from flask import Flask, render_template, flash, redirect, url_for, logging, req
 import mysql.connector
 from mysql.connector import Error
 from functools import wraps
-from werkzeug import secure_filename
+from Werkzeug import secure_filename
 import json
 import datetime
 
